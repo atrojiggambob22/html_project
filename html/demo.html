@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <div id="home">
+        <button id="b1">TIME OUT</button>
+        <div id="d1"></div>
+        <br>
+        <!-- <button id="b2">TIME OUT</button> -->
+        <div id="d2"></div>
+        <br>
+        <!-- <button id="b3">TIME OUT</button> -->
+        <div id="d3"></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#d1").mouseover(function(){
+            $("#d1").css("background-color","blue");
+            });
+
+            $("#d1").mouseout(function(){
+            $("#d1").css("background-color","red");
+            });
+            $("#b1").click(function(){
+            $("#d1").css("background-color","yellow",2000)
+            //.css(background-color,blue,2000)
+            .fadeToggle(2000);
+            });
+
+            $("#d2").mouseover(function(){
+                $("#d2").css("background-color","brown");
+            });
+
+            $("#d2").mouseout(function(){
+                $("#d2").css("background-color","purple");
+            });
+
+            $("#b1").click(function(){
+        $("#d2").css("background-color","lemon",3000)
+        //.css(background-color,blue,2000)
+        .fadeToggle(4000);
+        });
+m
+            $("#d3").mouseover(function(){
+                $("#d3").css("background-color","green");
+            });
+
+            $("#d3").mouseout(function(){
+                $("#d3").css("background-color","skyblue");
+            });
+
+            $("#b1").click(function(){
+        $("#d3").css("background-color","black",5000)
+        //.css(background-color,blue,2000)
+        .fadeToggle(6000);
+    });
+            
+    });
+            
+           
+        
+    </script>
+
+    <style>
+        button {
+            background-color: #005995;
+            color: azure;
+            width: 20%;
+            height: 5vh;
+            cursor: pointer;
+        }
+
+        #d1 {
+            background-color: blue;
+            height: 25vh;
+            width: 20%;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        #d2 {
+            background-color:lime;
+            height: 25vh;
+            width: 20%;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        #d3 {
+            background-color:bisque;
+            height: 25vh;
+            width: 20%;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+
+</body>
+</html>

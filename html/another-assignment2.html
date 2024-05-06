@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <!-- <script src="assignment._continuation.js"></script> -->
+    <script>
+        jQuery(document).ready(function(){
+    jQuery('.minus').on('click', function(e){
+        
+        // e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+
+        console.log(value);
+
+        if(value >1) {
+            value = value - 1;
+            var $overlay = jQuery("#overlay");
+            var currentIndex = 0;
+            
+            
+            $overlay.css('display','flex');
+            setTimeout(function(){
+                $overlay.css('display','none');
+                setTimeout(animation, 500);
+                $input.val(value);
+            }, 2000);
+        }
+        else {
+            value = 1;
+        }
+
+        function animation() {
+            $(dots[currentIndex]).removeClass('active');
+            currentIndex = (currentIndex + 1) % dots.length;
+            $(dots[currentIndex]).addClass('active');}
+
+        
+
+    });
+
+    jQuery('.add').on('click', function(e){
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+
+        console.log(value);
+
+        if(value < 100) {
+            value = value + 1;
+            var $overlay = jQuery("#overlay");
+
+        $overlay.css('display','flex');
+        setTimeout(function(){
+            $overlay.css('display','none');
+            $input.val(value);
+            }, 2000);
+        }
+        else {
+            value = 100;
+        }
+    });
+})
+    </script>
+    <style>
+        body{
+            justify-content:space-between;
+            text-align: center;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* gap: 2px;/ */
+        }
+
+        input{
+            width: 10%;
+            height: 20%;
+            color: #00ff4c;
+            font-size: 2.5rem;
+            border-radius: 20px;
+            border: 0.80px lightgreen;
+        }
+
+         div{
+            /* align-items: center; */
+            justify-content:space-evenly;
+            text-align: center;
+            display: flex;
+            
+            height: 90%;
+            /* width: 60%; */
+            font-size: 2.5rem;
+            border-radius:20px;
+            border: 0.80px lightgreen;
+            color:#00ff4c;
+        }
+        .qty-minus, .qty-plus:hover{
+            cursor: pointer;
+        }
+        .qty-minus, .qty-plus{
+            height: 20%;
+            width: 20%;
+            font-size: 2.5rem;
+            border-radius:20px;
+            border: 0.80px lightgreen;
+            color:#00ff4c;
+            margin-right: 40px;
+        }
+
+        #overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height:100vh;
+            width: 100%;
+            justify-content: center;
+            /* align-items: center; */
+            background-color: rgba(0,0,0,.2);
+            display: none;
+        }
+
+        .dot {
+            height: 30px;
+            width: 30px;
+            margin: 250px 2px;
+            /* background-color: #bbb; */
+            /* border-radius: 50%; */
+            display: inline-block;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .dot1 {
+            background-color: #3498db;
+            animation-name: moveAndChangeColor1;
+        }
+
+        .dot2 {
+            background-color: #e74c3c;
+            animation-name: moveAndChangeColor2;
+        }
+
+        .dot3 {
+            background-color: #27ae60;
+            animation-name: moveAndChangeColor3;
+        }
+
+        .active {
+            background-color: #eaadad;
+        }
+        
+        @keyframes moveAndChangeColor1 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+                background-color: #0c0a0d;
+            }
+        }
+
+        @keyframes moveAndChangeColor2 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+                background-color: #ac12f3;
+            }
+        }
+
+        @keyframes moveAndChangeColor3 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+                background-color: #27ae60;
+            }
+        }
+       
+    </style>
+    
+
+    
+        
+ 
+</head>
+<body>
+    <div id="everything">
+        <button class="add operator qty-plus">+</button>
+            <div id="increment">
+                <input type="number" id="input" value="1" disabled>
+            </div>
+        <button class="minus operator qty-minus">-</button>
+    </div>
+
+    <div id="everything">
+        <button class="add operator qty-plus">+</button>
+            <div id="increment">
+                <input type="number" id="input" value="1" disabled>
+            </div>
+        <button class="minus operator qty-minus">-</button>
+        <div id="overlay">
+            <span class="dot1 dot"></span>
+            <span class="dot2 dot"></span>
+            <span class="dot3 dot"></span>
+        </div>
+    <!-- </div>
+    <div id="everything">
+        <button class="add operator qty-plus">+</button>
+            <div id="increment">
+                <input type="number" id="input" value="1" disabled>
+            </div>
+        <button class="minus operator qty-minus">-</button>
+    </div> -->
+    <hr>
+       <!-- <div>
+        <button id="add" class="qty-minus">+</button>
+        <button id="increment">01</button>
+        <button id="minus" class="qty-plus">-</button>
+
+       </div>
+       <div>
+        <button id="add" class="qty-minus">+</button>
+        <button id="increment">01</button>
+        <button id="minus" class="qty-plus">-</button>
+       </div> -->
+       
+    
+   
+    <!-- <button id="add" class="operator">+</button>
+    <button id="increment">01</button>
+    <button id="minus" class="operator">-</button>
+    -->
+</body>
+</html>

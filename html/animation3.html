@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+<script>
+      $(document).ready(function(){
+            $("#action1").click(function(){
+                $("#event").slideDown(1000);
+                 });
+                $("#action2").click(function (){
+                    $("#event").slideUp(1000);
+                 }); 
+                 $("#action3").click(function(){
+                    $("#event").slideToggle(1000);
+                 });
+        });  
+</script>
+<style>
+    #action,#action2,#action3{
+        color: aliceblue;
+        font-size: 40px;
+        width: 30%;
+        /* padding: 20px; */
+        background-color: grey;
+
+    }
+    #event{
+        height: 200px;
+        background-color:grey;
+        display: none;
+    }
+</style>
+<body>
+    <button id="action1" >Slide Down</button>
+    <br>
+    <button id="action2">Slide Up</button>
+    <br>
+    <button id="action3">Slide Toggle</button>
+
+    <div id="event"></div>
+</body> 
+</html>

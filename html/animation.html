@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                //$("div").animate ({left: '250px'});
+                //$("div").slideUp(2000).slideDown(2000);
+                $("div").animate({right: '20px', right:'toggle'});
+            });
+        });  
+    </script>
+    <style>
+        #bl{
+            height: 50px;
+            width: 300px;
+        }
+    </style>
+<body>
+    <button id=""b1>Start Animation</button>
+    
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+         In consectetur deleniti id distinctio. 
+         Velit eveniet voluptatum tenetur ipsum totam laboriosam?</p>
+
+        <div style="width:50px; background:#98bf21;
+        height: 100px; width: 100px; position:absolute"></div> 
+</body>
+</html>

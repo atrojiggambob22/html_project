@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button{
+            height: 50px;
+        }
+        .ancestors *{
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("span").parentsUntil(".stop").css({"color": "blue", "border": "2px solid red"});
+            // $("span").parents(".stop").css({"color": "blue", "border": "2px solid red"});
+            // $("span").parent(".stop").css({"color": "blue", "border": "2px solid red"});
+            $("#traverse").click(function(){
+                $("span").parentsUntil(".stop").css({"color": "green", "border": "2px solid white"});   
+            })
+            $("#fade").click(function(){
+                $("span").parentsUntil(".stop").fadeToggle(1500);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id="fade">Fade</button>
+    <div style="background-color: yellow;" class="stop ancestors">
+        <div class="stop" style="width: 500px;">div (great-grandparent)
+            <ul class="">ul(grandparent)
+                <li> li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width: 500px;">div (grandparent)
+            <p>p(direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+    <button id="traverse">Traverse</button>
+</body>
+</html>
+
+<!-- Degsign
+2 buttons left to fade it all out and right write jquery and change the colors to white borders and green text  -->

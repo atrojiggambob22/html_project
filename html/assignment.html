@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+
+    $("#ii").click(function(){
+    $("#d1").css("background-color","red",1000)
+
+    .css("color","white")
+    .fadeToggle(2000);
+
+    $("#ii").css("background-color","skyblue",2000)
+
+    $("#d2").css("background-color","blue",2000)
+
+    .css("color","white")
+    .fadeToggle(3000);
+
+    $("#d3").css("background-color","skyblue",3000)
+
+    .css("color","red")
+    .fadeToggle(4000);
+
+    $("#d4").css("background-color","purple",4000)
+
+    .css("color","grey")
+    .fadeToggle(5000);
+
+    $("#d5").css("background-color","brown",5000)
+    .css("color","red")
+    .fadeToggle(6000);
+
+    $("#d6").css("background-color","grey",6000)
+    .css("color","#954300")
+
+    .fadeToggle(7000);
+
+    $("#d7").css("background-color","#954300",7000)
+    .css("color","lemon")
+    .fadeToggle(8000);
+
+    $("#d8").css("background-color","orange",8000)
+    .css("color","blue")
+    .fadeToggle(9000);
+
+    $("#d9").css("background-color","#2e0478",9000)
+    .css("color","black")
+    .fadeToggle(10000);
+
+    $("#d10").css("background-color","#929500",10000)
+    .css("color","lime")
+    .fadeToggle(11000);
+
+    $("#d11").css("background-color","#005995",11000)
+    .css("color","bisque")
+    .fadeToggle(12000);
+
+    $("#d12").css("background-color","#95000c",12000)
+    .css("color","#00956b")
+    .fadeToggle(13000);
+
+    });
+});
+</script>
+<body>
+    
+        <div class="fi">
+            <div class="firstname" id="d1">M</div>
+            <div class="firstname" id="d2">A</div>
+            <div class="firstname" id="d3">T</div>
+            <div class="firstname" id="d4">H</div>
+            <div class="firstname" id="d5">I</div>
+            <div class="firstname" id="d6">A</div>
+            <div class="firstname" id="d7">S</div>
+        </div>
+        <br>
+        <div class="ls">
+            <div class="lastname" id="d8">C</div>
+            <div class="lastname" id="d9">H</div>
+            <div class="lastname" id="d10">R</div>
+            <div class="lastname" id="d11">I</div>
+            <div class="lastname" id="d12">S</div>
+        </div>
+
+    <button id="ii">ANIMATE</button>
+    <style>
+        
+        div{
+            background-color: white;
+            color: black;
+            font-size:30px;
+            padding: 20px;
+            width: 13%;
+            display: flex;
+            margin-left: 20%;
+            /* height: 5vh; */
+            
+        }
+        .firstname{
+            color: green;
+            border: 0.50px solid rgb(0, 0, 0);
+            margin: 10px;
+            padding: 20%;
+            border-radius: 9px;
+        }
+        .lastname{
+            color: green;
+            border: 0.50px solid rgb(0, 0, 0);
+            margin: 10px; 
+            margin-left: 27%;
+            padding: 20%;
+            border-radius: 9px;
+        
+        }
+        button{
+            height:8vh;
+            border-radius: 7px;
+            font-size:larger;
+            border: 0.19px green solid;
+            margin-left: 46%;
+        }
+
+        
+    </style>
+</body>
+</html>

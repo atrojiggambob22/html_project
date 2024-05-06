@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js" ></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p").slideToggle(2000).toggleClass("p1", 1000)
+    });
+});
+</script>
+<style>
+    p{
+        background-color: red;
+        padding: 10px;
+        font-size: 30px;
+        color: #fff;
+        font-weight: bolder;
+
+    }
+    .p1{
+        background-color:green;
+       color: yellow;
+       
+
+    }
+  
+    </style>
+<body>
+    <p class="p1">NIIT is fun!!</p>
+
+    <button>Click me</button>
+</body>
+</html>
